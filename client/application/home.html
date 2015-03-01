@@ -10,8 +10,11 @@
         <div class="hero-tagline">
         <h1 class="logo"><span>hello</span>MAKER</h1>
         <h2>start learning how to build out your ideas with HTML, CSS and JavaScript</h2>
-        <article>
-            <a href="#">Log in</a><a href="#workshops">Sign Up for a Free Workshop</a>
+        <article class="modal">
+            <label for="modal-1">
+			    <div class="modal-trigger">Log in</div>
+			</label>
+			<a href="#workshops">Sign Up for a Free Workshop</a>
         </article>
         </div>
     </div>
@@ -23,12 +26,13 @@
     <h3>Dreamers to Makers</h3>
     <hr />
     <article>
-    <p>How many of us have great ideas? How many of those ideas actually get to see the light? We have started these free workshops to help people learn the necessary tools to become &ldquo;makers&rdquo; and &ldquo;doers&rdquo; of the digital age.</p>
+    <p>Do you have a great idea? Do you want to kickstart a new career? We have started these free workshops to help people learn the necessary tools to become &ldquo;makers&rdquo; and &ldquo;doers&rdquo; of the digital age.</p>
     <p>HelloMaker Camp is a series of hands on workshops. You can start with some basic projects or choose more advanced topics.</p>
     <p>We are a group of passionate designers and developers. All of us come from different, non-technical, backgrounds. We all learned web development ourselves and we know how hard it could be. There are a lot of great online resources, but sometimes all you need is an old-school class.</p>
-    <p><strong>All backgrounds and skill levels are welcome!</strong></p>
+
     </article>
     <div class="starter-questions">
+    <p><strong>All backgrounds and skill levels are welcomed!</strong></p>
         <p>Still have questions about helloMaker Camp? <a href="mailto:workshops@hellomaker.camp">Email Us</a></p>
 
     </div>
@@ -231,8 +235,27 @@
             <li><a href="https://plus.google.com/112148167491781178084" rel="publisher" target="_blank"><span class="entypo-gplus"></span></a></li>
         </ul>
     </div>
-  -->
 </footer>
-<!-- Footer: END -->	
+<!-- Footer: END -->
 
+<!-- Signup/Signin Modal: START -->
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-inner">
+      <label class="modal-close" for="modal-1"></label>
+      <h1>Hey there!</h1>
+      <p class="modal-intro">Good to see you back! Log in if you have an account or sign up if you want to take classes with us.</p>
+      	{{#if currentUser}}
+	        <p>You're logged in.</p>
+	        {{>logout}}
+		{{else}}
+			{{> login}}
+			{{> register}}	
+		{{/if}}
+      <!-- <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p> -->
+    </div>
+  </div>
+</div>
+<!-- Signup/Signin Modal: END -->
 </template>
