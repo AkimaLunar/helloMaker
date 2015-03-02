@@ -1,3 +1,9 @@
+Template.home.helpers({
+  classes: function(){
+    return Classes.find({}, {sort: {submitted: 1}});
+  }
+});
+
 Template.home.rendered = function(){
 /* Starting Animation on Load */
 	$('<img/>').attr('src', 'triangles.svg').load(function(){

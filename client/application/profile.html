@@ -1,7 +1,47 @@
 <template name="profile">
-	<h1>profile</h1>
-	{{#if currentUser}}
-	        <p>You're logged in.</p>
-	        {{>logout}}
-    {{/if}}
+	{{>nav}}
+    <section class="profile-classes">
+    <header>
+    	<div class="profile-classes-circle">&nbsp;</div>
+	    <h1 class="logo"><span>hello</span>MAKER</h1>
+        <h2>start learning how to build out your ideas with HTML, CSS and JavaScript</h2>
+        <hr>
+    </header>
+    <div class="user-classes">
+    	<h3>Your Classes</h3>
+		<table>
+			<tr>
+				<th>Class</th>
+				<th>Time</th>
+				<th>Coming</th>
+			</tr>
+			<tr>
+				<td>Row 1, Column 1</td>
+				<td>Row 1, Column 2</td>
+				<td>Row 3, Column 3</td>
+			</tr>
+			<tr>
+				<td>Row 2, Column 1</td>
+				<td>Row 2, Column 2</td>
+				<td>Row 3, Column 3</td>
+			</tr>
+			<tr>
+				<td>Row 2, Column 1</td>
+				<td>Row 2, Column 2</td>
+				<td>Row 3, Column 3</td>
+			</tr>
+		</table>
+	</div>
+    </section>
+	
+<div class="workshops-wrapper">
+	<section class="workshops">
+	    <h3>Other Workshops</h3>
+	    <ul class="workshops-list">
+	        {{#each classes}}
+	          {{> class}}
+	        {{/each}}
+	    </ul>
+    </section>
+</div>
 </template>

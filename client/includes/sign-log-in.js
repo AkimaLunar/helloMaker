@@ -1,16 +1,18 @@
 Template.register.events({
     'submit #register-form': function(event,template){
         event.preventDefault();
+        var nameVar = template.find('#register-name').value;
         var emailVar = template.find('#register-email').value;
         var passwordVar = template.find('#register-password').value;
         Accounts.createUser({
 	        email: emailVar,
-	        password: passwordVar
+	        password: passwordVar,
+	        name: nameVar
 	    }, function(err){
 	    	if (err) {
 	    		alert("Error");
 	    	} else {
-	    		alert("Success!");
+	    		alert("Success!" + this.name);
 	    	}
 	    });
 
@@ -27,7 +29,7 @@ Template.login.events({
 	    	if (err) {
 	    		alert("Error");
 	    	} else {
-	    		Router.go('/profile');
+	    		Router.go('/');
 	    	}
 	    });
 	}
